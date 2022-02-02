@@ -1,0 +1,63 @@
+version: "3.0"
+
+stories:
+  - story: Happy path for shipping form
+    steps:
+      - intent: chitchat
+      - action: utter_chitchat
+      - intent: create_shipping
+      - action: shipping_form
+      - active_loop: shipping_form
+      - active_loop: null
+      - action: action_shipping_form_submit
+      - action: action_shipping_form_reset
+      - action: utter_complete
+
+  - story: Shipping form with chitchat interjection
+    steps:
+      - intent: create_shipping
+      - action: shipping_form
+      - active_loop: shipping_form
+      - intent: chitchat
+      - action: utter_chitchat
+      - action: shipping_form
+      - active_loop: shipping_form
+
+  - story: Shipping form with canceling
+    steps:
+      - action: shipping_form
+      - active_loop: shipping_form
+      - intent: stop
+      - action: utter_ask_cancel_shipping
+      - intent: affirm
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: action_shipping_form_reset
+      - action: utter_stop
+
+  - story: Shipping form with stopped canceling
+    steps:
+      - active_loop: shipping_form
+      - intent: stop
+      - action: utter_ask_cancel_shipping
+      - intent: deny
+      - action: shipping_form
+      - active_loop: shipping_form
+
+  - story: Shipping form with asked information
+    steps:
+      - active_loop: shipping_form
+      - intent: ask_info
+      - action: action_respond_info
+      - action: shipping_form
+      - active_loop: shipping_form
+
+  - story: Asked information outside the form
+    steps:
+      - intent: chitchat
+      - action: utter_chitchat
+      - intent: ask_info
+      - action: action_respond_info
+      - intent: create_shipping
+      - action: shipping_form
+      - active_loop: shipping_form

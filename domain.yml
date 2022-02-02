@@ -1,0 +1,438 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - create_shipping
+  - stop
+  - inform
+  - chitchat:
+      is_retrieval_intent: true
+  - affirm
+  - deny
+  - ask_info
+entities:
+  - GPE
+  - ORG
+  - PERSON
+  - parcel_shape
+  - parcel_size
+  - shipping_speed
+  - zip
+slots:
+  requested_slot:
+    type: categorical
+    influence_conversation: true
+    mappings:
+      - type: custom
+    values:
+      - sender_name
+      - sender_full_address
+      - sender_country
+      - sender_city
+      - sender_zip
+      - sender_street
+      - sender_house_num
+      - sender_confirm
+      - dest_name
+      - dest_full_address
+      - dest_country
+      - dest_city
+      - dest_zip
+      - dest_street
+      - dest_house_num
+      - dest_confirm
+      - parcel_shape
+      - parcel_size
+      - shipping_speed
+  asked_info:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: custom
+        intent: ask_info
+        action: action_extract_asked_info
+  sender_full_address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_full_address
+  sender_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_name
+      - type: from_entity
+        entity: ORG
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_name
+      - type: from_entity
+        entity: PERSON
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_name
+  sender_country:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_country
+      - type: from_entity
+        entity: GPE
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_country
+      - type: custom
+  sender_city:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_city
+      - type: from_entity
+        entity: GPE
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_city
+      - type: custom
+  sender_zip:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_zip
+      - type: from_entity
+        entity: zip
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_zip
+      - type: custom
+  sender_street:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_street
+      - type: custom
+  sender_house_num:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_house_num
+      - type: custom
+  sender_confirm:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_intent
+        value: true
+        intent: affirm
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_confirm
+      - type: from_intent
+        value: false
+        intent: deny
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: sender_confirm
+  dest_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_name
+      - type: from_entity
+        entity: ORG
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_name
+      - type: from_entity
+        entity: PERSON
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_name
+  dest_full_address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_full_address
+  dest_country:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_country
+      - type: from_entity
+        entity: GPE
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_country
+      - type: custom
+  dest_city:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_city
+      - type: from_entity
+        entity: GPE
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_city
+      - type: custom
+  dest_zip:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_zip
+      - type: from_entity
+        entity: zip
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_zip
+      - type: custom
+  dest_street:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_street
+      - type: custom
+  dest_house_num:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        intent: inform
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_house_num
+      - type: custom
+  dest_confirm:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_intent
+        value: true
+        intent: affirm
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_confirm
+      - type: from_intent
+        value: false
+        intent: deny
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: dest_confirm
+  parcel_shape:
+    type: categorical
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        intent: inform
+        entity: parcel_shape
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: parcel_shape
+    values:
+      - box
+      - envelope
+      - tube
+  parcel_size:
+    type: categorical
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        intent: inform
+        entity: parcel_size
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: parcel_size
+    values:
+      - small
+      - medium
+      - large
+  shipping_speed:
+    type: categorical
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        intent: inform
+        entity: shipping_speed
+        conditions:
+          - active_loop: shipping_form
+            requested_slot: shipping_speed
+    values:
+      - express
+      - suggested
+      - economic
+responses:
+  utter_default:
+    - text: Sorry I didn't get that. Can you rephrase?
+  utter_ask_rephrase:
+    - text: Sorry, I don't understand. Can you rephrase?
+  utter_dont_know:
+    - text: Sorry, I don't know how to help you.
+  utter_stop:
+    - text: Ok, shipping canceled
+  utter_chitchat/greet:
+    - text: Hi! What do you want to do?
+  utter_chitchat/goodbye:
+    - text: See you soon!
+  utter_chitchat/bot_challenge:
+    - text: You might say I'm a bot, but I prefer to call myself a conversational agent.
+  utter_ask_cancel_shipping:
+    - text: Do you want to leave the shipping?
+  utter_ask_cancel:
+    - text: Do you want to leave?
+  utter_ask_shipping_form_sender_name:
+    - text: Let's start with you. What's the sender's name?
+  utter_ask_shipping_form_sender_full_address:
+    - text: Ok, {sender_name}. What's the sender's complete address?
+  utter_ask_shipping_form_sender_country:
+    - text: Which country are you sending from?
+  utter_ask_shipping_form_sender_city:
+    - text: From what city of {sender_country}?
+  utter_ask_shipping_form_sender_zip:
+    - text: What's the ZIP code of {sender_city}?
+  utter_ask_shipping_form_sender_street:
+    - text: From what street of {sender_city}?
+  utter_ask_shipping_form_sender_house_num:
+    - text: From which house number?
+  utter_ask_shipping_form_sender_confirm:
+    - text: From {sender_full_address}. Is it correct?
+  utter_ask_shipping_form_dest_name:
+    - text: Very good. Now the destination. What's the recipient's name?
+  utter_ask_shipping_form_dest_full_address:
+    - text: What's {dest_name} complete address?
+  utter_ask_shipping_form_dest_country:
+    - text: Which country are you sending to?
+  utter_ask_shipping_form_dest_city:
+    - text: To what city of {dest_country}?
+  utter_ask_shipping_form_dest_zip:
+    - text: What's the ZIP code of {dest_city}?
+  utter_ask_shipping_form_dest_street:
+    - text: To what street of {sender_city}?
+  utter_ask_shipping_form_dest_house_num:
+    - text: To which house number?
+  utter_ask_shipping_form_dest_confirm:
+    - text: To {dest_full_address}. Is it correct?
+  utter_ask_shipping_form_parcel_shape:
+    - text: Now, the package shape. Is it a thick box, a flat envelope, or a long tube?
+      buttons:
+        - title: Box
+          payload: /inform{{"parcel_shape":"box"}}
+        - title: Envelope
+          payload: /inform{{"parcel_shape":"envelope"}}
+        - title: Tube
+          payload: /inform{{"parcel_shape":"tube"}}
+  utter_ask_shipping_form_parcel_size:
+    - condition:
+        - type: slot
+          name: parcel_shape
+          value: envelope
+      text: Is your envelope a regular letter or a large package?
+      buttons:
+        - title: Regular
+          payload: /inform{{"parcel_size":"medium"}}
+        - title: Large
+          payload: /inform{{"parcel_size":"large"}}
+    - text: Is your box small, medium, or large?
+      buttons:
+        - title: Small
+          payload: /inform{{"parcel_size":"small"}}
+        - title: Medium
+          payload: /inform{{"parcel_size":"medium"}}
+        - title: Large
+          payload: /inform{{"parcel_size":"large"}}
+  utter_ask_shipping_form_shipping_speed:
+    - text: Do you prefer the express, recommended or economic shipment?
+      buttons:
+        - title: Express
+          payload: /inform{{"shipping_speed":"express"}}
+        - title: Recommended
+          payload: /inform{{"shipping_speed":"recommended"}}
+        - title: Economic
+          payload: /inform{{"shipping_speed":"economic"}}
+  utter_complete:
+    - text: All done! Your shipment is ready
+  utter_respond_info:
+    - text: You asked {asked_info}
+actions:
+  - action_shipping_form_submit
+  - action_shipping_form_reset
+  - action_extract_asked_info
+  - action_respond_info
+  - action_two_stage_fallback
+  - utter_ask_cancel_shipping
+  - utter_chitchat
+  - utter_stop
+  - validate_shipping_form
+forms:
+  shipping_form:
+    required_slots:
+      - sender_name
+      - sender_full_address
+      - sender_country
+      - sender_city
+      - sender_zip
+      - sender_street
+      - sender_house_num
+      - sender_confirm
+      - dest_name
+      - dest_full_address
+      - dest_country
+      - dest_city
+      - dest_zip
+      - dest_street
+      - dest_house_num
+      - dest_confirm
+      - parcel_shape
+      - parcel_size
+      - shipping_speed

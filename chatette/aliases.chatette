@@ -1,0 +1,29 @@
+~[me]
+    [me|us]
+
+~[i need]
+    [&i]['d|would?] [need|want]
+    [&i]['d|would] like
+
+~[can you]
+    [&[can|could|would]] you [be so kind to?]
+
+~[request]
+    [~[i need]|~[can you]?]
+
+~[shipping]
+    [send|ship|transfer|dispatch] a [package|parcel|letter|packet|box|tube]
+    create a shipping [for a [package|parcel|letter|packet|box|tube]?]
+
+~[dest]
+    to ~[partial address]
+
+~[source]
+    from ~[partial address]
+
+~[partial address]
+    [@[address]?] [@[city]?] [@[zip_code]?] [@[country]?]
+    [@[country]?] [@[address]?] [@[zip_code]?] [@[city]?]
+
+~[it is]
+    [&it is|&it's?] [from|to?]

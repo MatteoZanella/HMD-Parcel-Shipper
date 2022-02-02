@@ -1,0 +1,61 @@
+version: "3.0"
+
+rules:
+  - rule: Implementation of the Two-Stage-Fallback
+    steps:
+      - intent: nlu_fallback
+      - action: action_two_stage_fallback
+      - active_loop: action_two_stage_fallback
+
+  - rule: Reply fixed answers (chit-chat and FAQs)
+    steps:
+      - intent: chitchat
+      - action: utter_chitchat
+
+  - rule: Activate create shipping form
+    steps:
+      - intent: create_shipping
+      - action: shipping_form
+      - active_loop: shipping_form
+
+  - rule: Submit the new shipping
+    condition:
+      - active_loop: shipping_form
+    steps:
+      - action: shipping_form
+      - active_loop: null
+      - action: action_shipping_form_submit
+      - action: action_shipping_form_reset
+      - action: utter_complete
+
+  - rule: Ask to quit the shipping
+    condition:
+      - active_loop: shipping_form
+    steps:
+      - intent: stop
+      - action: utter_ask_cancel_shipping
+
+  - rule: Confirm the shipping form quit
+    condition:
+      - active_loop: shipping_form
+    steps:
+      - action: utter_ask_cancel_shipping
+      - intent: affirm
+      - action: action_deactivate_loop
+      - active_loop: null
+      - action: action_shipping_form_reset
+      - action: utter_stop
+
+  - rule: Deny the shipping form quit
+    condition:
+      - active_loop: shipping_form
+    steps:
+      - action: utter_ask_cancel_shipping
+      - intent: deny
+      - action: shipping_form
+      - active_loop: shipping_form
+
+  - rule: Asked information
+    steps:
+      - intent: ask_info
+      - action: action_respond_info

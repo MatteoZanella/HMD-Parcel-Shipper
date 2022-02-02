@@ -1,0 +1,82 @@
+@[address]
+    ~[number][[A|B|C|D|E]?] [,?] ~[street-name] ~[street-end] [[[,?] ~[detail] ~[number][[A|B|C|D|E]?]]?]
+    ~[prefisso-via] ~[nome-via] [,?] ~[number][[A|B|C|D|E]?] [[~[dettaglio] ~[number]]?]
+
+~[street-name]
+    Lancaster
+    Trenton
+    Miller
+    Heathcote
+    Strawberry
+    Abana
+    Alphonse
+    Arnold
+    Beacon Hill
+    Crowfield
+    Drake
+    Fenney
+    French Oak
+
+~[street-end]
+    Street
+    Avenue
+    St.
+    Ave.
+    Drive
+    Alley
+    Route
+    Line
+    Cliff
+    Grove
+    Gate
+    Plaza
+
+~[number]
+    7815
+    95
+    4
+    35
+    823
+    10
+    28
+    104
+    123
+    11
+    23
+    9
+    1
+
+~[detail]
+    Apt.
+    Apartment
+    Suite
+    Floor
+
+~[prefisso-via]
+    Via
+    Vicolo
+    Viale
+    Piazza
+    Corso
+    Rotonda
+    Traversa
+    Largo
+
+~[nome-via]
+    Cardinale Riario Sforza
+    Pilastri
+    Castelfidardo
+    Francesco Del Giudice
+    Longhena
+    Goffredo Mameli
+    Trieste e Trento
+    San Cosmo fuori Porta Nolana
+    Scala
+    Crosera
+    Guantai Nuovi
+    Palermo
+    delle Azalee
+
+~[dettaglio]
+    interno
+    appartamento

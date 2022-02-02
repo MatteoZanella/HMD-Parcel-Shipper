@@ -1,0 +1,31 @@
+// Flight booking sentences
+
+%[&inform1](train:10, test:5)
+    [~[it is]|The address is?] @[address]
+%[&inform2](train:10, test:5)
+    [~[it is]|The city is?] @[city]
+%[&inform3](train:10, test:5)
+    [~[it is]|[Its|@[city]] ZIP [code?] is?] @[zip_code]
+%[&inform4](train:10, test:5)
+    [~[it is]|[Its|@[city]|The] ZIP [code?] is?] @[zip_code]
+%[&inform5](train:10, test:5)
+    [~[it is]|[Its|@[city]|The] country [code?] is?] @[country]
+%[&inform6](train:10, test:5)
+    [~[it is]|&[my|his|her] name is|&the [sender|recipient] is?] @[name]
+
+%[&create_shipping](train:50, test:20)
+    ~[request] ~[shipping] ~[dest?] ~[source?]
+
+
+
+
+%[&thank](2)
+    Thank you
+    Thanks [a lot?]
+
+|aliases.chatette
+|slots/addresses.chatette
+|slots/cities.chatette
+|slots/countries.chatette
+|slots/names.chatette
+|slots/zip-codes.chatette

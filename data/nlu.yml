@@ -1,0 +1,436 @@
+version: "3.0"
+
+nlu:
+  - intent: chitchat/greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: chitchat/bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - affirmative
+      - I agree
+      - I guess so
+      - continue
+      - all good
+      - nothing to complain
+      - sure
+      - ok
+      - true
+
+  - intent: deny
+    examples: |
+      - deny
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - wrong
+      - no way
+      - not really
+      - I don't want
+      - I refuse
+      - I won't do that
+      - not correct
+      - change
+      - false
+      - you get it wrong
+      - you're mistaken
+      - I changed my mind
+
+  - intent: stop
+    examples: |
+      - stop
+      - stop here
+      - Do not continue
+      - Stop this
+      - I want to start again
+      - delete
+      - abort
+      - cancel
+      - cancel everything
+      - quit
+      - leave
+      - I prefer to abandone
+      - Exit the operation
+      - Just exit
+      - I want to leave
+      - Leave the shipping
+
+  - intent: ask_info
+    examples: |
+      - What does it mean?
+      - What's the difference
+      - I don't understand
+      - Explain
+      - Give me more information
+      - I want more info
+      - That's unclear
+      - Explain better
+      - What?
+      - There is a difference?
+      - How big is an [envelope](parcel_shape)?
+      - Can you explain what is a [cylinder](parcel_shape)?
+      - Tell me what is a [tube](parcel_shape)
+      - What's the difference between a [package](parcel_shape) and a [tube](parcel_shape)?
+      - What's the difference between a [mail](parcel_shape) and a [box](parcel_shape)?
+      - Expalin what changes [pipe](parcel_shape) and [postcard](parcel_shape)?
+      - Give me informations about the [envelope](parcel_shape)
+      - How much can the [envelope](parcel_shape) be thick?
+      - How [big](parcel_size) can be an [envelope](parcel_shape)?
+      - Can you explain what is a [small](parcel_size)?
+      - Tell me what is [medium](parcel_size)
+      - What changes between [large](parcel_size) and a [medium](parcel_size)?
+      - What is the difference between a [tiny](parcel_size) and a [big](parcel_size)?
+      - Expalin what changes [normal](parcel_size) and [small](parcel_size)?
+      - Give me informations about the [moderate](parcel_size)
+      - What's the maximum weight for the [small](parcel_size) shipping
+      - How fast is [express](shipping_speed)?
+      - Can you explain what is a [recommended](shipping_speed) shipping?
+      - Tell me what is the [cheapest](shipping_speed)
+      - What do you mean by [economic](shipping_speed)?
+      - What's the difference between a [cheap](shipping_speed) and a [quick](shipping_speed)?
+      - What's the difference between a [suggested](shipping_speed) and a [faster](shipping_speed) expedition?
+      - Expalin what changes [rapid](shipping_speed) and [convenient](shipping_speed)?
+      - Give me informations about the [best one](shipping_speed)
+      - How much costs the one that [cost less](shipping_speed)?
+      - Explain the [recommended](shipping_speed)
+      - What's the price of the [economic](shipping_speed) shipping
+      - When will arrive the [express](shipping_speed) shipping
+      - What changes between these options?
+      - What changes between these shipping methods?
+
+
+  - intent: out_of_scope
+    examples: |
+      - I want to order food
+      - What is 2 + 2?
+      - Who's the US President?
+      - The cat is outside
+      - I want to buy a laptop
+
+  - intent: create_shipping
+    examples: |
+      - New shipment
+      - New shipping
+      - Create shipment
+      - Create shipping
+      - Retieve my [package](parcel_shape) and send it to Sweden
+      - I want to ship a parcel
+      - Can I send a [tiny](parcel_size) [package](parcel_shape)?
+      - I need to ship a [box](parcel_shape)
+      - Send a [letter](parcel_shape)
+      - Send a [long](parcel_shape) parcel
+      - I need a [postcard](parcel_shape) to reach my friend
+      - Book a shipment for my [envelope](parcel_shape)
+      - I want to ship a [medium](parcel_size) [crate](parcel_shape) from Australia
+      - Ship to the UK
+      - Can you be so kind to create a shipping
+      - Can you be so kind to create a shipping to from Belgium
+      - Can you create a shipping for a [pack](parcel_shape) from yes
+      - Can you create a shipping for a [heavy](parcel_size) [box](parcel_shape) to Berlin in Germany from Peru
+      - Could you create a shipping for a [letter](parcel_shape) to Peru
+      - Could you create a shipping for a [tube](parcel_size) from Poland to the south of Poland
+      - Could you create a shipping from United Kingdom
+      - Create a shipping for a [letter](parcel_shape)
+      - Create a shipping for a [packet](parcel_shape) to Fiji
+      - Create a shipping for a [flat](parcel_shape) parcel
+      - Create a shipping for a parcel to my doctor living in Saudi Arabia from my home
+      - Create a shipping for a [tube](parcel_size) and take it from here
+      - Create a shipping in Argentina
+      - Dispatch a [box](parcel_shape) from Pakistan
+      - I want create a shipping for a [cylindric](parcel_shape) box to Brazil from here
+      - I want create a shipping to France from Montenegro
+      - I'd like create a shipping for a [light](parcel_size) [bundle](parcel_shape) to Switzerland
+      - I would like to create a shipping for a [postcard](parcel_shape) from France
+      - I would like to dispatch a [package](parcel_shape) to Kyrgyzstan from Poland
+      - Send a [package](parcel_shape) from Portugal
+      - Send a [carton](parcel_shape)
+      - Ship a [pack](parcel_shape) from India
+      - Ship a [envelope](parcel_shape)
+      - Ship a [packet](parcel_shape) from Boston
+      - Would you transfer a [packet](parcel_shape)
+      - can you be so kind to create a shipping for a [letter](parcel_shape) to Italy
+      - Can you be so kind to send from Cambodia
+      - can you ship a [package](parcel_shape)
+      - create a shipping
+      - create a shipping for Robert
+      - dispatch a [box](parcel_shape) from London
+      - dispatch a parcel
+      - i'd like create a shipping
+      - i'd want transfer a [letter](parcel_shape)
+      - transfer a [box](parcel_shape)
+      - Ship this parcel
+      - Mail a [letter](parcel_shape)
+      - Send a [mail](parcel_shape)
+
+  - intent: inform
+    examples: |
+      - Singapore
+      - Bangladesh
+      - UK
+      - From USA
+      - United Kingdom
+      - From fiji
+      - To fiji
+      - italy
+      - kyrgyzstan
+      - to singapore
+      - united Kingdom
+      - it's 11 , Alphonse Drive , Apt. 1C
+      - It's Rotonda delle Azalee 23
+      - 11 , Lancaster Avenue  Floor 4D
+      - 19 Lampster Drive, London
+      - 15 Via Laterale, Povo Italia
+      - 192 Cacoon Street
+      - Largo Scala, 4
+      - Rotonda Longhena 7815
+      - 28
+      - 5 A
+      - 10 b
+      - 9
+      - 130
+      - House number 30
+      - The number is 1 A
+      - The street is Corso Castelfidardo 104A apartment 123
+      - Vicolo Scala 9D suite 104
+      - from 1 Drake Avenue
+      - to 123 Trenton Route
+      - viale delle Azalee 10C interno 11
+      - Matteo.
+      - Uhm... I guess Dr. Kubrik
+      - Ramires Esteban.
+      - It's John
+      - Doctor Emile
+      - The sender is Arianna Lopez.
+      - Send from Barilla
+      - The receiver is Yorg Doe.
+      - Send to Astra Zenith
+      - It's Rome
+      - Bangkok
+      - Brussels
+      - From Prague
+      - Trento
+      - Xiamen
+      - bangkok
+      - lucknow
+      - the city is Prague
+      - to Lucknow
+      - [3 7 5 73](zip)
+      - [49604](zip)
+      - [67 493](zip)
+      - [85930](zip)
+      - [00412](zip)
+      - [10223](zip)
+      - [40123](zip)
+      - [9001 2](zip)
+      - [4 047 5](zip)
+      - [6 4 63 8](zip)
+      - [7 1 18 9](zip)
+      - [380 1 4](zip)
+      - [22 20 1](zip)
+      - [4 154 5](zip)
+      - [94 3 16](zip)
+      - [034 4 2](zip)
+      - [6937 1](zip)
+      - [75 5 3 9](zip)
+      - [7 48 23](zip)
+      - [9 5741](zip)
+      - [9 9 9 8 3](zip)
+      - [6 5 3 74](zip)
+      - [228 9 5](zip)
+      - [8 7 9 05](zip)
+      - The postal code is [91 669](zip)
+      - [1 53 17](zip)
+      - [4 9 8 7 4](zip)
+      - [58 425](zip)
+      - It is [10 52 3](zip)
+      - [2 09 62](zip)
+      - Postal code? Is [4 3 7 52](zip)
+      - [86 85 5](zip)
+      - [21 110](zip) is the postal
+      - Its ZIP code is [2 1 7 8 4](zip)
+      - [7 3907](zip)
+      - [3 3 14 9](zip)
+      - [42 6 00](zip)
+      - [2 9 9 20](zip)
+      - It is from [0 115 7](zip)
+      - Its ZIP code is [49604](zip)
+      - its ZIP is [0603 3](zip)
+      - Xiamen ZIP is [85930](zip)
+      - London ZIP is [6 7493](zip)
+      - Her name is Mr. Thompson Robert
+      - his name is Hamilton Storage
+      - His name is Mrs. Esposito
+      - it's from Young-Gi Elissa
+      - The recipient is Rocket Lawyer Incorporated
+      - the sender is Jaagup
+      - Gi Spark Spa
+      - Melissa G. Hoffman
+      - Monica Halim
+      - marco Vincenzo De Luca
+      - It's [flat envelope](parcel_shape)
+      - [Envelope](parcel_shape) probably
+      - [flat](parcel_shape)
+      - I want [note](parcel_shape)
+      - I think [missive](parcel_shape)
+      - [epistle](parcel_shape) probably
+      - [letter](parcel_shape)
+      - [postcard](parcel_shape)
+      - [greeting card](parcel_shape)
+      - I want [thick box](parcel_shape)
+      - [box](parcel_shape)
+      - I choose [thick](parcel_shape)
+      - [package](parcel_shape)
+      - Take [pack](parcel_shape)
+      - [case](parcel_shape) maybe
+      - Send [bundle](parcel_shape)
+      - [bag](parcel_shape)
+      - Pick [carton](parcel_shape)
+      - [crate](parcel_shape) I think
+      - I want [magazine](parcel_shape)
+      - [tube](parcel_shape)
+      - I think [long tube](parcel_shape)
+      - [cylinder](parcel_shape)
+      - Let's get [pipe](parcel_shape)
+      - [long](parcel_shape) I guess
+      - The size is [small](parcel_size)
+      - [tiny](parcel_size) dimension
+      - [light](parcel_size)
+      - [medium](parcel_size) size.
+      - Just a [moderate](parcel_size) dimension.
+      - [normal](parcel_size)
+      - [large](parcel_size)
+      - Very [heavy](parcel_size)
+      - [big](parcel_size)
+      - Incredibly [huge](parcel_size)
+      - [express](shipping_speed)
+      - [recommended](shipping_speed)
+      - [economic](shipping_speed)
+      - I prefer the [express](shipping_speed)
+      - I want the [recommended](shipping_speed)
+      - [economic](shipping_speed) , I think
+      - The [cheapest](shipping_speed)
+      - The [fastest](shipping_speed)
+      - The [suggested](shipping_speed) one
+      - [fast](shipping_speed) shipping
+      - take [faster](shipping_speed)
+      - select [fastest](shipping_speed)
+      - [rapid](shipping_speed)
+      - [quick](shipping_speed) one
+      - I want [soonest](shipping_speed)
+      - As [soon](shipping_speed) as possible
+      - I'd like [sooner](shipping_speed)
+      - Send it [immediately](shipping_speed)
+      - Just take the [best](shipping_speed)
+      - [balanced](shipping_speed) I guess
+      - The [ideal](shipping_speed) , thanks
+      - Just the [cheapest](shipping_speed)
+      - [cheap](shipping_speed)
+      - [cheaper](shipping_speed)
+      - The one that [cost less](shipping_speed)
+      - I prefer the most [convenient](shipping_speed)
+      - Just take the [inexpensive](shipping_speed)
+
+  - regex: zip
+    examples: |
+      - (\d\s*){4}\d
+
+  - synonym: envelope
+    examples: |
+      - flat envelope
+      - envelopes
+      - flat
+      - mail
+      - note
+      - missive
+      - epistle
+      - letter
+      - letters
+      - postcard
+      - postcards
+      - greeting card
+  - synonym: box
+    examples: |
+      - boxes
+      - thick box
+      - thick
+      - package
+      - pack
+      - case
+      - bundle
+      - bag
+      - carton
+      - crate
+      - magazine
+  - synonym: tube
+    examples: |
+      - tubes
+      - long tube
+      - cylinder
+      - pipe
+      - long
+  - synonym: small
+    examples: |
+      - tiny
+      - light
+  - synonym: medium
+    examples: |
+      - moderate
+      - normal
+  - synonym: large
+    examples: |
+      - huge
+      - big
+      - heavy
+
+  - synonym: express
+    examples: |
+      - fast
+      - faster
+      - fastest
+      - rapid
+      - quick
+      - soonest
+      - soon
+      - sooner
+      - immediately
+  - synonym: recommended
+    examples: |
+      - best
+      - suggested
+      - balanced
+      - ideal
+  - synonym: economic
+    examples: |
+      - cheapest
+      - cheap
+      - cheaper
+      - cost less
+      - convenient
+      - inexpensive
