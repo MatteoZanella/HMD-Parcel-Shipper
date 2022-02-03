@@ -23,6 +23,45 @@ nlu:
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
+      - are you fake?
+      - you are a bot, aren't you?
+
+  - intent: chitchat/thank
+    examples: |
+      - Thank you
+      - Thanks
+      - Thank u
+      - Ohh thanks
+      - You solved my problem
+      - You have been helpful
+
+  - intent: chitchat/goodbye
+    examples: |
+      - I don't need anything else
+      - See you
+      - Goodbye
+      - That's all for now
+      - Bye
+      - Bye bye
+
+  - intent: chitchat/ask_name
+    examples: |
+      - What's your name?
+      - How should I call you?
+      - Give me your name
+      - I don't know your name
+      - Who are you?
+      - What are you?
+
+  - intent: chitchat/help
+    examples: |
+      - Help me
+      - I don't know what to do
+      - What can you do?
+      - What can I do?
+      - What are you capable of?
+      - How should I start?
+      - And what are you?
 
   - intent: affirm
     examples: |
@@ -62,6 +101,8 @@ nlu:
       - you get it wrong
       - you're mistaken
       - I changed my mind
+      - go back
+      - It's not that
 
   - intent: stop
     examples: |
@@ -133,6 +174,13 @@ nlu:
       - Who's the US President?
       - The cat is outside
       - I want to buy a laptop
+      - What's the tallest mountain?
+      - What is the National Bird of India?
+      - Which is the only vowel not used as the first letter in a US State?
+      - What is the largest country in the world?
+      - Alberta is a province of which country?
+      - What is the capital of Chile?
+
 
   - intent: create_shipping
     examples: |

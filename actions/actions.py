@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from rasa_sdk import Action, Tracker, ValidationAction, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, ActionReverted, UserUtteranceReverted
 
 
 load_dotenv()
@@ -34,7 +34,7 @@ class ValidateShippingForm(FormValidationAction):
             extracted_slots['sender_street'] = item['address'].get('street')
             extracted_slots['sender_house_num'] = item['address'].get('houseNumber')
         else:
-            dispatcher.utter_message('Sorry, something went wrong')
+            dispatcher.utter_message(response='utter_address_not_found')
             extracted_slots['sender_full_address'] = None
         return extracted_slots
 
@@ -51,7 +51,7 @@ class ValidateShippingForm(FormValidationAction):
             extracted_slots['dest_street'] = item['address'].get('street')
             extracted_slots['dest_house_num'] = item['address'].get('houseNumber')
         else:
-            dispatcher.utter_message('Sorry, something went wrong')
+            dispatcher.utter_message(response='utter_address_not_found')
             extracted_slots['dest_full_address'] = None
         return extracted_slots
 
@@ -142,6 +142,7 @@ class ActionShippingFormReset(Action):
         return [
             SlotSet('sender_name', None),
             SlotSet('sender_confirm', None),
+            SlotSet('dest_name', None),
             SlotSet('dest_full_address', None),
             SlotSet('dest_country', None),
             SlotSet('dest_city', None),
@@ -161,7 +162,7 @@ class ActionExtractAskedInfo(Action):
 
     def run(self, dispatcher, tracker, domain) -> List[Dict[Text, Any]]:
         requested_slot = tracker.get_slot('requested_slot')
-        parcel_shape = tracker.get_slot('parcel_size')
+        parcel_shape = tracker.get_slot('parcel_shape')
         if requested_slot in {'parcel_shape', 'parcel_size', 'shipping_speed'}:
             entities = list(set(tracker.get_latest_entity_values(requested_slot)))
             if len(entities) == 0:
@@ -177,37 +178,6 @@ class ActionExtractAskedInfo(Action):
         else:
             entities = None
         return [SlotSet('asked_info', entities)]
-        # info_size = set(tracker.get_latest_entity_values('parcel_size'))
-        # info_speed = set(tracker.get_latest_entity_values('parcel_size'))
-        # parcel_shape = tracker.get_slot('parcel_shape')
-        # kb = {
-        #     'parcel_shape': {'envelope', 'box', 'tube'},
-        #     'parcel_size': {
-        #         'envelope': {'medium', 'large'},
-        #         'box': {'small', 'medium', 'large'},
-        #         'tube': {}
-        #     },
-        #     'shipping_speed': {'express', 'recommended', 'economic'}
-        # }
-        # # Outside the corresponding requested_slots
-        # if requested_slot not in kb.keys():
-        #     pass
-        #
-        # if requested_slot in kb.keys():
-        #     options = kb[requested_slot]
-        #     if requested_slot == 'parcel_size':
-        #         options = options[parcel_shape]
-        #     slot_value = list(filter(lambda v: v in options, slot_value))
-        #     if len(slot_value) == 0:
-        #         slot_value = list(options)
-        #     if requested_slot == 'parcel_size':
-        #         slot_value = [(parcel_shape, size) for size in slot_value]
-        # else:
-        #     slot_value = []
-        #
-        # print(f'I am called: {slot_value}')
-        # return [SlotSet('asked_info', list(slot_value))]
-        # return [{'asked_info': slot_value}]
 
 
 class ActionRespondInfo(Action):
@@ -242,6 +212,14 @@ class ActionRespondInfo(Action):
             for info in asked_info:
                 if info in self.kb.keys():
                     dispatcher.utter_message(self.kb[info])
-        elif asked_info is not None and len(asked_info) == 0:
+        else:
             dispatcher.utter_message(response='utter_dont_know')
         return []
+
+
+class ActionRevert(Action):
+    def name(self) -> Text:
+        return "action_revert"
+
+    def run(self, dispatcher, tracker, domain):
+        return[UserUtteranceReverted(), ActionReverted()]

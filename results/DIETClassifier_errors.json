@@ -1,0 +1,779 @@
+[
+  {
+    "text": "What's the difference between a package and a tube?",
+    "entities": [
+      {
+        "start": 32,
+        "end": 39,
+        "value": "package",
+        "entity": "parcel_shape"
+      },
+      {
+        "start": 46,
+        "end": 50,
+        "value": "tube",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 32,
+        "end": 39,
+        "confidence_entity": 0.9995130300521851,
+        "value": "box",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "parcel_size",
+        "start": 46,
+        "end": 50,
+        "confidence_entity": 0.9590088725090027,
+        "value": "tube",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How fast is express?",
+    "entities": [
+      {
+        "start": 12,
+        "end": 19,
+        "value": "express",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "shipping_speed",
+        "start": 4,
+        "end": 8,
+        "confidence_entity": 0.9981657862663269,
+        "value": "express",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "shipping_speed",
+        "start": 12,
+        "end": 19,
+        "confidence_entity": 0.9974439144134521,
+        "value": "express",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What's the difference between a suggested and a faster expedition?",
+    "entities": [
+      {
+        "start": 32,
+        "end": 41,
+        "value": "suggested",
+        "entity": "shipping_speed"
+      },
+      {
+        "start": 48,
+        "end": 54,
+        "value": "faster",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "shipping_speed",
+        "start": 48,
+        "end": 54,
+        "confidence_entity": 0.9924947023391724,
+        "value": "express",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Which is the only vowel not used as the first letter in a US State?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 46,
+        "end": 52,
+        "confidence_entity": 0.9984943866729736,
+        "value": "envelope",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "I want create a shipping for a cylindric box to Brazil from here",
+    "entities": [
+      {
+        "start": 31,
+        "end": 40,
+        "value": "cylindric",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 41,
+        "end": 44,
+        "confidence_entity": 0.9961460828781128,
+        "value": "box",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Rotonda Longhena 7815",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "zip",
+        "start": 17,
+        "end": 21,
+        "confidence_entity": 0.9444987177848816,
+        "value": "7815",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "case maybe",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "case",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "The suggested one",
+    "entities": [
+      {
+        "start": 4,
+        "end": 13,
+        "value": "suggested",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "shipping_speed",
+        "start": 14,
+        "end": 17,
+        "confidence_entity": 0.9336487650871277,
+        "value": "one",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "quick one",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "quick",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "shipping_speed",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.936819314956665,
+        "value": "quick one",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "As soon as possible",
+    "entities": [
+      {
+        "start": 3,
+        "end": 7,
+        "value": "soon",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "The ideal , thanks",
+    "entities": [
+      {
+        "start": 4,
+        "end": 9,
+        "value": "ideal",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I prefer the most convenient",
+    "entities": [
+      {
+        "start": 18,
+        "end": 28,
+        "value": "convenient",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "shipping_speed",
+        "start": 13,
+        "end": 17,
+        "confidence_entity": 0.2831544876098633,
+        "value": "most",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "shipping_speed",
+        "start": 18,
+        "end": 28,
+        "confidence_entity": 0.9925364255905151,
+        "value": "economic",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "How big is an envelope?",
+    "entities": [
+      {
+        "start": 14,
+        "end": 22,
+        "value": "envelope",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_size",
+        "start": 4,
+        "end": 7,
+        "confidence_entity": 0.9980722665786743,
+        "value": "large",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "parcel_shape",
+        "start": 14,
+        "end": 22,
+        "confidence_entity": 0.9849333167076111,
+        "value": "envelope",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How much can the envelope be thick?",
+    "entities": [
+      {
+        "start": 17,
+        "end": 25,
+        "value": "envelope",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 17,
+        "end": 25,
+        "confidence_entity": 0.9350733757019043,
+        "value": "envelope",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "parcel_shape",
+        "start": 29,
+        "end": 34,
+        "confidence_entity": 0.610176146030426,
+        "value": "box",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "What is 2 + 2?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "zip",
+        "start": 8,
+        "end": 9,
+        "confidence_entity": 0.9079280495643616,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "zip",
+        "start": 12,
+        "end": 13,
+        "confidence_entity": 0.6781376600265503,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "28",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "zip",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.4909926950931549,
+        "value": "28",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "9",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "zip",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9020340442657471,
+        "value": "9",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Send it immediately",
+    "entities": [
+      {
+        "start": 8,
+        "end": 19,
+        "value": "immediately",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Give me informations about the best one",
+    "entities": [
+      {
+        "start": 31,
+        "end": 39,
+        "value": "best one",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Could you create a shipping for a tube from Poland to the south of Poland",
+    "entities": [
+      {
+        "start": 34,
+        "end": 38,
+        "value": "tube",
+        "entity": "parcel_size"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 34,
+        "end": 38,
+        "confidence_entity": 0.9992941617965698,
+        "value": "tube",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Create a shipping for a tube and take it from here",
+    "entities": [
+      {
+        "start": 24,
+        "end": 28,
+        "value": "tube",
+        "entity": "parcel_size"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 24,
+        "end": 28,
+        "confidence_entity": 0.9992170333862305,
+        "value": "tube",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Mail a letter",
+    "entities": [
+      {
+        "start": 7,
+        "end": 13,
+        "value": "letter",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9993894100189209,
+        "value": "envelope",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "parcel_shape",
+        "start": 7,
+        "end": 13,
+        "confidence_entity": 0.9962722063064575,
+        "value": "envelope",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "192 Cacoon Street",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 4,
+        "end": 10,
+        "confidence_entity": 0.17074032127857208,
+        "value": "Cacoon",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I want note",
+    "entities": [
+      {
+        "start": 7,
+        "end": 11,
+        "value": "note",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I think missive",
+    "entities": [
+      {
+        "start": 8,
+        "end": 15,
+        "value": "missive",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "greeting card",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "greeting card",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want magazine",
+    "entities": [
+      {
+        "start": 7,
+        "end": 15,
+        "value": "magazine",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "What's the difference between a mail and a box?",
+    "entities": [
+      {
+        "start": 32,
+        "end": 36,
+        "value": "mail",
+        "entity": "parcel_shape"
+      },
+      {
+        "start": 43,
+        "end": 46,
+        "value": "box",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 43,
+        "end": 46,
+        "confidence_entity": 0.770555317401886,
+        "value": "box",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What changes between large and a medium?",
+    "entities": [
+      {
+        "start": 21,
+        "end": 26,
+        "value": "large",
+        "entity": "parcel_size"
+      },
+      {
+        "start": 33,
+        "end": 39,
+        "value": "medium",
+        "entity": "parcel_size"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_size",
+        "start": 33,
+        "end": 39,
+        "confidence_entity": 0.9970486760139465,
+        "value": "medium",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "large",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "large",
+        "entity": "parcel_size"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "fast shipping",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "fast",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "balanced I guess",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "balanced",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "How big can be an envelope?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 7,
+        "value": "big",
+        "entity": "parcel_size"
+      },
+      {
+        "start": 18,
+        "end": 26,
+        "value": "envelope",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 18,
+        "end": 26,
+        "confidence_entity": 0.999054491519928,
+        "value": "envelope",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How much costs the one that cost less?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 37,
+        "value": "cost less",
+        "entity": "shipping_speed"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "shipping_speed",
+        "start": 9,
+        "end": 14,
+        "confidence_entity": 0.9262779951095581,
+        "value": "costs",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "shipping_speed",
+        "start": 28,
+        "end": 37,
+        "confidence_entity": 0.9448805451393127,
+        "value": "economic",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Largo Scala, 4",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "zip",
+        "start": 13,
+        "end": 14,
+        "confidence_entity": 0.772782564163208,
+        "value": "4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Postal code? Is 4 3 7 52",
+    "entities": [
+      {
+        "start": 16,
+        "end": 24,
+        "value": "4 3 7 52",
+        "entity": "zip"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "zip",
+        "start": 18,
+        "end": 24,
+        "confidence_entity": 0.5322415232658386,
+        "value": "3 7 52",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "21 110 is the postal",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "21 110",
+        "entity": "zip"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "zip",
+        "start": 3,
+        "end": 6,
+        "confidence_entity": 0.7227646112442017,
+        "value": "110",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "epistle probably",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "epistle",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want thick box",
+    "entities": [
+      {
+        "start": 7,
+        "end": 16,
+        "value": "thick box",
+        "entity": "parcel_shape"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "parcel_shape",
+        "start": 13,
+        "end": 16,
+        "confidence_entity": 0.9865257740020752,
+        "value": "box",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

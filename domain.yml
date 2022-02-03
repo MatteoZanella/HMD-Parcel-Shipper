@@ -11,6 +11,7 @@ intents:
   - affirm
   - deny
   - ask_info
+  - out_of_scope
 entities:
   - GPE
   - ORG
@@ -314,55 +315,63 @@ slots:
       - economic
 responses:
   utter_default:
-    - text: Sorry I didn't get that. Can you rephrase?
+    - text: Sorry, I think this is beyond my capabilities.
   utter_ask_rephrase:
     - text: Sorry, I don't understand. Can you rephrase?
   utter_dont_know:
     - text: Sorry, I don't know how to help you.
   utter_stop:
-    - text: Ok, shipping canceled
+    - text: Ok, shipping canceled.
   utter_chitchat/greet:
     - text: Hi! What do you want to do?
   utter_chitchat/goodbye:
     - text: See you soon!
   utter_chitchat/bot_challenge:
     - text: You might say I'm a bot, but I prefer to call myself a conversational agent.
+  utter_chitchat/thank:
+    - text: You are welcome!
+  utter_chitchat/ask_name:
+    - text: I'm Parcel Shipper, nice to meet you!
+  utter_chitchat/help:
+    - text: I can help you to ship your parcels. Just ask me, and I'll be glad to guide you.
   utter_ask_cancel_shipping:
-    - text: Do you want to leave the shipping?
+    - text: Do you want to leave the shipment?
+  utter_address_not_found:
+    - text: I'm sorry, I didn't found your address. Can you repeat please?
   utter_ask_cancel:
     - text: Do you want to leave?
   utter_ask_shipping_form_sender_name:
     - text: Let's start with you. What's the sender's name?
   utter_ask_shipping_form_sender_full_address:
-    - text: Ok, {sender_name}. What's the sender's complete address?
+    - text: Ok, {sender_name}. What's the full address you are sending from?
   utter_ask_shipping_form_sender_country:
-    - text: Which country are you sending from?
+    - text: And which country are you sending from?
   utter_ask_shipping_form_sender_city:
-    - text: From what city of {sender_country}?
+    - text: Okay, from what city in {sender_country}?
   utter_ask_shipping_form_sender_zip:
-    - text: What's the ZIP code of {sender_city}?
+    - text: Got it. What's the ZIP code of {sender_city}?
   utter_ask_shipping_form_sender_street:
-    - text: From what street of {sender_city}?
+    - text: And from what street of {sender_city}?
   utter_ask_shipping_form_sender_house_num:
-    - text: From which house number?
+    - text: Okay, from which house number?
   utter_ask_shipping_form_sender_confirm:
-    - text: From {sender_full_address}. Is it correct?
+    - text: To recap, from {sender_full_address}. Is it correct?
   utter_ask_shipping_form_dest_name:
     - text: Very good. Now the destination. What's the recipient's name?
   utter_ask_shipping_form_dest_full_address:
-    - text: What's {dest_name} complete address?
+    - text: Ok, what is the full address of {dest_name}?
   utter_ask_shipping_form_dest_country:
-    - text: Which country are you sending to?
+    - text: And which country are you sending to?
   utter_ask_shipping_form_dest_city:
-    - text: To what city of {dest_country}?
+    - text: Got it. To what city in {dest_country}?
   utter_ask_shipping_form_dest_zip:
-    - text: What's the ZIP code of {dest_city}?
+    - text: And what's the ZIP code of {dest_city}?
   utter_ask_shipping_form_dest_street:
-    - text: To what street of {sender_city}?
+    - text: Ok, to what street of {sender_city}?
   utter_ask_shipping_form_dest_house_num:
-    - text: To which house number?
+    - text: And lastly, to which house number?
   utter_ask_shipping_form_dest_confirm:
-    - text: To {dest_full_address}. Is it correct?
+    - text: Very well, to {dest_full_address}. Is it correct?
   utter_ask_shipping_form_parcel_shape:
     - text: Now, the package shape. Is it a thick box, a flat envelope, or a long tube?
       buttons:
@@ -377,13 +386,13 @@ responses:
         - type: slot
           name: parcel_shape
           value: envelope
-      text: Is your envelope a regular letter or a large package?
+      text: Great, is your envelope a regular letter or a large package?
       buttons:
         - title: Regular
           payload: /inform{{"parcel_size":"medium"}}
         - title: Large
           payload: /inform{{"parcel_size":"large"}}
-    - text: Is your box small, medium, or large?
+    - text: Great, is your box small, medium, or large?
       buttons:
         - title: Small
           payload: /inform{{"parcel_size":"small"}}
@@ -392,7 +401,7 @@ responses:
         - title: Large
           payload: /inform{{"parcel_size":"large"}}
   utter_ask_shipping_form_shipping_speed:
-    - text: Do you prefer the express, recommended or economic shipment?
+    - text: Almost done. Do you prefer the express, recommended or economic shipment?
       buttons:
         - title: Express
           payload: /inform{{"shipping_speed":"express"}}
@@ -401,15 +410,13 @@ responses:
         - title: Economic
           payload: /inform{{"shipping_speed":"economic"}}
   utter_complete:
-    - text: All done! Your shipment is ready
-  utter_respond_info:
-    - text: You asked {asked_info}
+    - text: All done! Your shipment is ready. The parcel pickup will happen tomorrow morning.
 actions:
   - action_shipping_form_submit
   - action_shipping_form_reset
   - action_extract_asked_info
   - action_respond_info
-  - action_two_stage_fallback
+  - action_revert
   - utter_ask_cancel_shipping
   - utter_chitchat
   - utter_stop

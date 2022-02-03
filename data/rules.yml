@@ -12,6 +12,11 @@ rules:
       - intent: chitchat
       - action: utter_chitchat
 
+  - rule: Reply out of scope questions
+    steps:
+      - intent: out_of_scope
+      - action: utter_default
+
   - rule: Activate create shipping form
     steps:
       - intent: create_shipping
@@ -59,3 +64,22 @@ rules:
     steps:
       - intent: ask_info
       - action: action_respond_info
+
+  - rule: Asked information
+    condition:
+      - active_loop: shipping_form
+    steps:
+      - intent: ask_info
+      - action: action_respond_info
+      - action: shipping_form
+      - active_loop: shipping_form
+
+  - rule: Deny what the bot uttered
+    condition:
+      - active_loop: shipping_form
+    steps:
+      - action: shipping_form
+      - intent: deny
+      - action: action_revert
+      - action: shipping_form
+      - active_loop: shipping_form

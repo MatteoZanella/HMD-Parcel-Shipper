@@ -32,12 +32,12 @@
   "conversations": {
     "welcome": {
       "name": "welcome",
-      "url": "<INSERT YOUR FULLFILLMENT URL HERE>",
+      "url": "http://77.32.81.161:30060/webhooks/google_assistant/webhook",
       "fulfillmentApiVersion": 2
     },
     "rasa_intent": {
       "name": "rasa_intent",
-      "url": "...",
+      "url": "http://77.32.81.161:30060/webhooks/google_assistant/webhook",
       "fulfillmentApiVersion": 2
     }
   },

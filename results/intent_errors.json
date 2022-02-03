@@ -1,0 +1,482 @@
+[
+  {
+    "text": "moin",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9443694353103638
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5214951038360596
+    }
+  },
+  {
+    "text": "That's all for now",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6836097240447998
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9073967337608337
+    }
+  },
+  {
+    "text": "I guess so",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "deny",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "stop",
+      "confidence": 0.3901911973953247
+    }
+  },
+  {
+    "text": "false",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6324044466018677
+    }
+  },
+  {
+    "text": "go back",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.42860108613967896
+    }
+  },
+  {
+    "text": "I prefer to abandone",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.5439884662628174
+    }
+  },
+  {
+    "text": "What?",
+    "intent": "ask_info",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9956626296043396
+    }
+  },
+  {
+    "text": "I want to order food",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.6256537437438965
+    }
+  },
+  {
+    "text": "I want to buy a laptop",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "stop",
+      "confidence": 0.6608042120933533
+    }
+  },
+  {
+    "text": "Which is the only vowel not used as the first letter in a US State?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.5869296193122864
+    }
+  },
+  {
+    "text": "Send to Astra Zenith",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.9999983310699463
+    }
+  },
+  {
+    "text": "The ideal , thanks",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9995118379592896
+    }
+  },
+  {
+    "text": "of course",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "out_of_scope",
+      "confidence": 0.7781695127487183
+    }
+  },
+  {
+    "text": "not correct",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9896787405014038
+    }
+  },
+  {
+    "text": "Exit the operation",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9897658228874207
+    }
+  },
+  {
+    "text": "Just exit",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "What's the price of the economic shipping",
+    "intent": "ask_info",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9179637432098389
+    }
+  },
+  {
+    "text": "What is 2 + 2?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "it's from Young-Gi Elissa",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.7843815684318542
+    }
+  },
+  {
+    "text": "long I guess",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.972140908241272
+    }
+  },
+  {
+    "text": "Send it immediately",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.9984633922576904
+    }
+  },
+  {
+    "text": "The one that cost less",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9931724667549133
+    }
+  },
+  {
+    "text": "How should I start?",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.7592079639434814
+    }
+  },
+  {
+    "text": "continue",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "stop",
+      "confidence": 0.9999834299087524
+    }
+  },
+  {
+    "text": "nothing to complain",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9949325919151306
+    }
+  },
+  {
+    "text": "you get it wrong",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.6308423280715942
+    }
+  },
+  {
+    "text": "you're mistaken",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9999842643737793
+    }
+  },
+  {
+    "text": "What is the National Bird of India?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.8957145810127258
+    }
+  },
+  {
+    "text": "I want note",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9984211921691895
+    }
+  },
+  {
+    "text": "letter",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.9919861555099487
+    }
+  },
+  {
+    "text": "Send bundle",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.9997854828834534
+    }
+  },
+  {
+    "text": "Let's get pipe",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9994138479232788
+    }
+  },
+  {
+    "text": "What can I do?",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9790267944335938
+    }
+  },
+  {
+    "text": "affirmative",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.448209673166275
+    }
+  },
+  {
+    "text": "all good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.9995694756507874
+    }
+  },
+  {
+    "text": "true",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9413749575614929
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4350287616252899
+    }
+  },
+  {
+    "text": "Do not continue",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6332787275314331
+    }
+  },
+  {
+    "text": "I want to start again",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "chitchat",
+      "confidence": 0.5566074252128601
+    }
+  },
+  {
+    "text": "When will arrive the express shipping",
+    "intent": "ask_info",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.5778008699417114
+    }
+  },
+  {
+    "text": "The cat is outside",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999982118606567
+    }
+  },
+  {
+    "text": "Send a carton",
+    "intent": "create_shipping",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999954700469971
+    }
+  },
+  {
+    "text": "Send from Barilla",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.9986261129379272
+    }
+  },
+  {
+    "text": "recommended",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9963613152503967
+    }
+  },
+  {
+    "text": "I want the recommended",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9999890327453613
+    }
+  },
+  {
+    "text": "fast shipping",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "create_shipping",
+      "confidence": 0.9992153644561768
+    }
+  },
+  {
+    "text": "I don't need anything else",
+    "intent": "chitchat",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9894421100616455
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9949578642845154
+    }
+  },
+  {
+    "text": "I refuse",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9480060935020447
+    }
+  },
+  {
+    "text": "delete",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7736188173294067
+    }
+  },
+  {
+    "text": "I don't understand",
+    "intent": "ask_info",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9977415800094604
+    }
+  },
+  {
+    "text": "That's unclear",
+    "intent": "ask_info",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.727588951587677
+    }
+  },
+  {
+    "text": "How much costs the one that cost less?",
+    "intent": "ask_info",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7959660887718201
+    }
+  },
+  {
+    "text": "Explain the recommended",
+    "intent": "ask_info",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9949069619178772
+    }
+  },
+  {
+    "text": "What's the tallest mountain?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9880945086479187
+    }
+  },
+  {
+    "text": "What is the capital of Chile?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_info",
+      "confidence": 0.9059230089187622
+    }
+  },
+  {
+    "text": "normal",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6290018558502197
+    }
+  }
+]

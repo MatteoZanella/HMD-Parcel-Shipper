@@ -1,0 +1,122 @@
+[
+  {
+    "text": "let's go",
+    "intent_response_key_target": "chitchat/greet",
+    "intent_response_key_prediction": {
+      "name": "chitchat/help",
+      "confidence": 0.44656920433044434
+    }
+  },
+  {
+    "text": "are you fake?",
+    "intent_response_key_target": "chitchat/bot_challenge",
+    "intent_response_key_prediction": {
+      "name": "chitchat/ask_name",
+      "confidence": 0.8864759206771851
+    }
+  },
+  {
+    "text": "You have been helpful",
+    "intent_response_key_target": "chitchat/thank",
+    "intent_response_key_prediction": {
+      "name": "chitchat/ask_name",
+      "confidence": 0.8664487600326538
+    }
+  },
+  {
+    "text": "That's all for now",
+    "intent_response_key_target": "chitchat/goodbye",
+    "intent_response_key_prediction": {
+      "name": "chitchat/ask_name",
+      "confidence": 0.9713427424430847
+    }
+  },
+  {
+    "text": "What are you capable of?",
+    "intent_response_key_target": "chitchat/help",
+    "intent_response_key_prediction": {
+      "name": "chitchat/ask_name",
+      "confidence": 0.7364206910133362
+    }
+  },
+  {
+    "text": "goodevening",
+    "intent_response_key_target": "chitchat/greet",
+    "intent_response_key_prediction": {
+      "name": "chitchat/goodbye",
+      "confidence": 0.8483508825302124
+    }
+  },
+  {
+    "text": "How should I call you?",
+    "intent_response_key_target": "chitchat/ask_name",
+    "intent_response_key_prediction": {
+      "name": "chitchat/help",
+      "confidence": 0.4000104069709778
+    }
+  },
+  {
+    "text": "How should I start?",
+    "intent_response_key_target": "chitchat/help",
+    "intent_response_key_prediction": {
+      "name": "chitchat/ask_name",
+      "confidence": 0.8523555397987366
+    }
+  },
+  {
+    "text": "And what are you?",
+    "intent_response_key_target": "chitchat/help",
+    "intent_response_key_prediction": {
+      "name": "chitchat/ask_name",
+      "confidence": 0.9999959468841553
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent_response_key_target": "chitchat/greet",
+    "intent_response_key_prediction": {
+      "name": "chitchat/goodbye",
+      "confidence": 0.9806539416313171
+    }
+  },
+  {
+    "text": "See you",
+    "intent_response_key_target": "chitchat/goodbye",
+    "intent_response_key_prediction": {
+      "name": "chitchat/ask_name",
+      "confidence": 0.850304365158081
+    }
+  },
+  {
+    "text": "Help me",
+    "intent_response_key_target": "chitchat/help",
+    "intent_response_key_prediction": {
+      "name": "chitchat/thank",
+      "confidence": 0.991904079914093
+    }
+  },
+  {
+    "text": "You solved my problem",
+    "intent_response_key_target": "chitchat/thank",
+    "intent_response_key_prediction": {
+      "name": "chitchat/goodbye",
+      "confidence": 0.30532750487327576
+    }
+  },
+  {
+    "text": "I don't need anything else",
+    "intent_response_key_target": "chitchat/goodbye",
+    "intent_response_key_prediction": {
+      "name": "chitchat/help",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "I don't know your name",
+    "intent_response_key_target": "chitchat/ask_name",
+    "intent_response_key_prediction": {
+      "name": "chitchat/help",
+      "confidence": 0.5373377799987793
+    }
+  }
+]

@@ -1,6 +1,5 @@
 /.rasa
 /venv
-/models
 __pycache__
 .env
-upload.sh
+creds.data
